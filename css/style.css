@@ -115,7 +115,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.6rem;
   text-decoration: none;
   color: var(--text-primary);
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .logo-brand img {
@@ -129,27 +130,29 @@ h1, h2, h3, h4, h5, h6 {
 .logo-brand .brand-title {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+  font-size: clamp(0.9rem, 1.6vw, 1.35rem);
   letter-spacing: 0.5px;
   color: #fff;
   text-transform: uppercase;
   white-space: nowrap;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(0.35rem, 0.85vw, 0.75rem);
+  gap: clamp(0.35rem, 1vw, 0.85rem);
   list-style: none;
-  flex-shrink: 1;
+  flex-shrink: 0;
 }
 
 .nav-links a {
   color: var(--text-muted);
   text-decoration: none;
   font-family: var(--font-heading);
-  font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+  font-size: clamp(0.7rem, 0.9vw, 0.825rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -646,9 +649,22 @@ footer {
     gap: 0.5rem;
   }
 
+  .logo-brand {
+    gap: 0.4rem;
+  }
+
+  .logo-brand img {
+    height: 32px;
+  }
+
   .logo-brand .brand-title {
-    font-size: clamp(0.75rem, 3.8vw, 0.9rem);
-    letter-spacing: 0.25px;
+    font-size: clamp(0.75rem, 4.2vw, 1.05rem);
+    letter-spacing: 0px;
+  }
+
+  .mobile-toggle {
+    padding: 0.35rem 0.6rem;
+    font-size: 1.1rem;
   }
 
   .btn {
