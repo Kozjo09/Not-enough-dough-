@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
   initMobileMenu();
-  initAudioEffects();
   initCounters();
 });
 
@@ -23,7 +22,7 @@ function initParticleCanvas() {
   });
 
   const particles = [];
-  const particleCount = Math.floor((width * height) / 20000);
+  const particleCount = Math.min(Math.floor((width * height) / 22000), 50);
 
   class Particle {
     constructor() {
@@ -33,10 +32,10 @@ function initParticleCanvas() {
     reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
       this.radius = Math.random() * 1.5 + 0.5;
-      this.alpha = Math.random() * 0.3 + 0.1;
+      this.alpha = Math.random() * 0.25 + 0.1;
     }
 
     update() {
@@ -71,11 +70,11 @@ function initParticleCanvas() {
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 100) {
+        if (dist < 90) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(255, 255, 255, ${0.08 * (1 - dist / 100)})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${0.06 * (1 - dist / 90)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -101,64 +100,6 @@ function initMobileMenu() {
   }
 }
 
-/* Subtle Web Audio Synthesizer Beeps */
-let audioCtx = null;
-let soundEnabled = true;
-
-function initAudioEffects() {
-  const btn = document.querySelector('.sound-toggle-btn');
-  if (!btn) return;
-
-  btn.addEventListener('click', () => {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    soundEnabled = !soundEnabled;
-    btn.innerHTML = soundEnabled ? '🔊 SOUND: ON' : '🔇 SOUND: OFF';
-    if (soundEnabled) playSynthBeep(440, 0.08);
-  });
-
-  document.querySelectorAll('.btn, .card, .nav-links a').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (soundEnabled && audioCtx) {
-        playSynthBeep(600, 0.02);
-      }
-    });
-
-    el.addEventListener('click', () => {
-      if (soundEnabled && audioCtx) {
-        playSynthBeep(880, 0.05);
-      }
-    });
-  });
-}
-
-function playSynthBeep(freq = 440, duration = 0.08) {
-  if (!soundEnabled) return;
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-  }
-
-  const osc = audioCtx.createOscillator();
-  const gain = audioCtx.createGain();
-
-  osc.type = 'triangle';
-  osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(freq / 1.5, audioCtx.currentTime + duration);
-
-  gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-
-  osc.start();
-  osc.stop(audioCtx.currentTime + duration);
-}
-
 /* Animated Counters */
 function initCounters() {
   const counters = document.querySelectorAll('.counter');
@@ -171,13 +112,13 @@ function initCounters() {
         const prefix = entry.target.getAttribute('data-prefix') || '';
         const suffix = entry.target.getAttribute('data-suffix') || '';
         let count = 0;
-        const speed = target / 40;
+        const speed = Math.max(target / 30, 1);
 
         const updateCount = () => {
           count += speed;
           if (count < target) {
             entry.target.innerText = prefix + Math.ceil(count).toLocaleString() + suffix;
-            setTimeout(updateCount, 25);
+            setTimeout(updateCount, 30);
           } else {
             entry.target.innerText = prefix + target.toLocaleString() + suffix;
           }

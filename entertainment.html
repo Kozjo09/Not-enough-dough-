@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOUGH ENTERTAINMENT | Media, Studios & Podcast Syndicate</title>
+  <title>DOUGH ENTERTAINMENT | Media & Creative Syndicate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Overlay Halftone / Scanline Pattern -->
+  <!-- Overlay Pattern -->
   <div class="scanlines"></div>
 
   <!-- Navigation -->
@@ -24,144 +24,91 @@
 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home Hub</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="games.html">Dough Games</a></li>
           <li><a href="entertainment.html" class="active">Dough Entertainment</a></li>
           <li><a href="technologies.html">Dough Technologies</a></li>
-          <li><a href="about.html">Founders & About</a></li>
+          <li><a href="about.html">Founders & Story</a></li>
         </ul>
       </nav>
 
-      <div class="nav-actions">
-        <button class="sound-toggle-btn">🔊 SOUND: ON</button>
-        <button class="mobile-toggle">☰</button>
-      </div>
+      <button class="mobile-toggle">☰</button>
     </div>
   </header>
 
   <main>
     <!-- Page Header -->
-    <section style="padding: 4rem 0 2rem; text-align: center;">
+    <section style="padding: 3rem 0 1.5rem; text-align: center;">
       <div class="container">
-        <div class="japanese-title" style="margin-bottom: 0.5rem;">エンターテインメント部門 // DIVISION 02</div>
-        <h1 style="font-size: 3rem; margin-bottom: 0.75rem;">
+        <div class="japanese-title" style="margin-bottom: 0.4rem;">エンターテインメント部門 // DIVISION 02</div>
+        <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">
           DOUGH <span class="text-white">ENTERTAINMENT</span>
         </h1>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1rem;">
-          Cinematic anime productions, global podcast networks, and studio releases under Jordan & Kelly's creative direction.
+        <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto; font-size: 0.95rem;">
+          Creative direction, media production, and video concepts under Kelly's guidance.
         </p>
       </div>
     </section>
 
-    <!-- Audio Player & Visualizer Section -->
+    <!-- Visualizer Canvas Section -->
     <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-title">
-          <div class="japanese-title" style="margin-bottom: 0.5rem;">音響波形 // SPECTRUM PLAYER</div>
-          <h2>MONOCHROME <span class="text-white">AUDIO VAULT</span></h2>
-          <p>Stream official Dough Records soundscapes and podcast feeds.</p>
+          <div class="japanese-title" style="margin-bottom: 0.4rem;">音響波形 // SPECTRUM CANVAS</div>
+          <h2>AUDIO WAVEFORM <span class="text-white">CANVAS</span></h2>
+          <p>Real-time monochrome audio visualizer animation.</p>
         </div>
 
-        <div class="card" style="max-width: 680px; margin: 0 auto;">
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
-            <!-- Canvas Visualizer -->
-            <canvas id="spectrum-canvas" width="600" height="100" style="background:#000; border-radius:4px; border:1px solid var(--border-color); width:100%;"></canvas>
-
-            <!-- Track Info -->
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <canvas id="spectrum-canvas" width="560" height="90" style="background:#000; border-radius:4px; border:1px solid var(--border-color); width:100%;"></canvas>
             <div style="text-align: center;">
-              <h3 id="current-track-title" class="text-white" style="font-size: 1.15rem;">NOT ENOUGH DOUGH - MONOCHROME THEME</h3>
-              <p id="current-track-artist" style="color: var(--text-muted); font-size: 0.85rem;">Dough Records feat. Jordan & Kelly</p>
-            </div>
-
-            <!-- Player Controls -->
-            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; justify-content: center;">
-              <button id="prev-track-btn" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">⏮️ PREV</button>
-              <button id="play-audio-btn" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">▶️ PLAY AUDIO</button>
-              <button id="next-track-btn" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">NEXT ⏭️</button>
+              <h3 id="current-track-title" class="text-white" style="font-size: 1rem;">NOT ENOUGH DOUGH - THEME</h3>
+              <p id="current-track-artist" style="color: var(--text-muted); font-size: 0.8rem;">Dough Entertainment</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Shows & Media Showcase -->
+    <!-- Content Concepts -->
     <section>
       <div class="container">
         <div class="section-title">
-          <div class="japanese-title" style="margin-bottom: 0.5rem;">制作作品 // PRODUCTIONS</div>
-          <h2>FEATURED <span class="text-white">STUDIO MEDIA</span></h2>
-          <p>Watch and listen to top productions across the network.</p>
+          <div class="japanese-title" style="margin-bottom: 0.4rem;">メディア企画 // MEDIA PROJECTS</div>
+          <h2>MEDIA <span class="text-white">CONCEPTS</span></h2>
+          <p>Shows, podcasts, and video ideas being prepared for official release.</p>
         </div>
 
         <div class="grid-3">
-          <!-- Show 1 -->
+          <!-- Item 1 -->
           <div class="card">
-            <div class="tag" style="margin-bottom:0.75rem;">PODCAST NETWORK</div>
+            <div class="tag" style="margin-bottom:0.5rem;">PODCAST</div>
             <h3>THE DOUGH TALK SHOW</h3>
-            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
-              Hosted by Jordan & Kelly. In-depth conversations on wealth creation, AI, and media culture.
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0.5rem 0 1rem;">
+              A casual talk show hosted by Jordan & Kelly discussing tech, gaming, and business journeys.
             </p>
-            <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-content:space-between; align-items:center;">
-              <span class="text-white" style="font-size:0.8rem; font-family:var(--font-heading);">EPISODE #142</span>
-              <button class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.75rem;" onclick="alert('Streaming Episode #142...')">LISTEN 🎧</button>
-            </div>
+            <div class="tag">EPISODES IN PRODUCTION</div>
           </div>
 
-          <!-- Show 2 -->
+          <!-- Item 2 -->
           <div class="card">
-            <div class="tag" style="margin-bottom:0.75rem;">CINEMATIC FILM</div>
-            <h3>NOT ENOUGH DOUGH: THE MOVIE</h3>
-            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
-              The story of how two visionaries built a multi-industry tech and gaming dynasty.
+            <div class="tag" style="margin-bottom:0.5rem;">DOCUMENTARY</div>
+            <h3>NOT ENOUGH DOUGH: ORIGINS</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0.5rem 0 1rem;">
+              Behind-the-scenes look at how a school project evolved into an actual business entity.
             </p>
-            <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-content:space-between; align-items:center;">
-              <span class="text-white" style="font-size:0.8rem; font-family:var(--font-heading);">BOX OFFICE: $1.2B</span>
-              <button class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.75rem;" onclick="alert('Playing Official Trailer...')">TRAILER 🍿</button>
-            </div>
+            <div class="tag">BEHIND THE SCENES</div>
           </div>
 
-          <!-- Show 3 -->
+          <!-- Item 3 -->
           <div class="card">
-            <div class="tag" style="margin-bottom:0.75rem;">ANIMATED SERIES</div>
-            <h3>BAKER SYNDICATE 2099</h3>
-            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
-              An anime series following elite operatives defending the company's quantum vaults.
+            <div class="tag" style="margin-bottom:0.5rem;">ANIMATED SHORT</div>
+            <h3>BAKER SYNDICATE</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0.5rem 0 1rem;">
+              An anime-style short animation featuring our brand characters and aesthetic.
             </p>
-            <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-content:space-between; align-items:center;">
-              <span class="text-white" style="font-size:0.8rem; font-family:var(--font-heading);">SEASON 2 STREAMING</span>
-              <button class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.75rem;" onclick="alert('Opening Stream...')">WATCH 📺</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- World Tour & Events -->
-    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
-      <div class="container">
-        <div class="section-title">
-          <div class="japanese-title" style="margin-bottom: 0.5rem;">ワールドツアー // WORLD TOUR</div>
-          <h2>2026 GLOBAL <span class="text-white">CONFERENCES</span></h2>
-          <p>Catch Jordan and Kelly live at executive tech & media keynotes.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <div class="tag">TOKYO DOME - JAPAN</div>
-              <h4 style="margin-top:0.5rem;">NEO-DOUGH MEDIA CONVENTION</h4>
-              <p style="color:var(--text-muted); font-size:0.85rem;">Keynotes by Jordan & Kelly.</p>
-            </div>
-            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="alert('Pass Reserved!')">PASS 🎟️</button>
-          </div>
-
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <div class="tag">MADISON SQUARE GARDEN - NYC</div>
-              <h4 style="margin-top:0.5rem;">DOUGH TECH CON 2026</h4>
-              <p style="color:var(--text-muted); font-size:0.85rem;">Global ecosystem summit.</p>
-            </div>
-            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="alert('Pass Claimed!')">PASS 🎟️</button>
+            <div class="tag">CONCEPT BOARD</div>
           </div>
         </div>
       </div>
@@ -172,7 +119,7 @@
   <footer>
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2026 NOT ENOUGH DOUGH ENTERTAINMENT HQ. FOUNDED BY JORDAN & KELLY.</p>
+        <p>&copy; 2026 NOT ENOUGH DOUGH. CO-FOUNDED BY JORDAN & KELLY.</p>
       </div>
     </div>
   </footer>

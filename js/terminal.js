@@ -8,31 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const commands = {
     'help': `AVAILABLE DOUGH COMMANDS:
-  - <span class="text-white">status</span>       : Display system uptime & cloud status.
-  - <span class="text-white">founders</span>     : Display dossier on Jordan & Kelly.
-  - <span class="text-white">tech-specs</span>   : View DoughAI and Quantum Bake specs.
-  - <span class="text-white">bake</span>         : Run AI algorithm simulation.
+  - <span class="text-white">status</span>       : Display system status.
+  - <span class="text-white">story</span>        : Read how Not Enough Dough started.
+  - <span class="text-white">founders</span>     : Display info on Jordan & Kelly.
   - <span class="text-white">clear</span>        : Clear terminal output.`,
 
     'status': `<span class="text-white">[SYSTEM STATUS OK]</span>
-  - DoughAI Cluster: ONLINE (99.99% Uptime)
-  - Quantum Latency: 0.002ms
-  - Global Nodes: Tokyo, New York, Amsterdam, Singapore, London
-  - Security Clearance: LEVEL 5 (JORDAN & KELLY APPROVED)`,
+  - Site Status: ONLINE & ACTIVE
+  - Co-Founders: Jordan & Kelly
+  - Headquarters: Active Business Launch`,
 
-    'founders': `<span class="text-white">[EXECUTIVE DOSSIER]</span>
-  - <span class="text-white">JORDAN</span>: Co-Founder & CEO. Chief Architect of Dough Technologies.
-  - <span class="text-white">KELLY</span>: Co-Founder & CCO. Chief Innovation Officer & Media Director.`,
+    'story': `<span class="text-white">[OUR AUTHENTIC STORY]</span>
+  In 2023, Jordan & Kelly created 'Not Enough Dough' as a running joke for school presentations.
+  Fast-forward to today: we've turned our concept into a legitimate business entity!`,
 
-    'tech-specs': `<span class="text-white">[SPECIFICATIONS ARCHITECTURE v4.2]</span>
-  - Neural Engine: 100,000 TFLOPS Quantum Processing Unit (QDPU)
-  - Consensus Mechanism: Proof-of-Stake-and-Bake (PoSB)
-  - Encryption: 4096-bit Post-Quantum Lattice Cryptography`,
-
-    'bake': `<span class="text-white">[EXECUTING AI ALGORITHM...]</span>
-  > Analyzing market liquidity... [OK]
-  > Calculating dough ratio... [OK]
-  > <span class="text-white">BAKE COMPLETE! +$1,000,000 DOUGH CAPITAL GENERATED!</span>`
+    'founders': `<span class="text-white">[CO-FOUNDERS DOSSIER]</span>
+  - <span class="text-white">JORDAN</span>: Co-Founder & Development Lead.
+  - <span class="text-white">KELLY</span>: Co-Founder & Creative Director.`
   };
 
   terminalInput.addEventListener('keydown', (e) => {
@@ -63,10 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       terminalBody.appendChild(responseLine);
       terminalBody.scrollTop = terminalBody.scrollHeight;
-
-      if (typeof playSynthBeep === 'function') {
-        playSynthBeep(800, 0.04);
-      }
     }
   });
 
