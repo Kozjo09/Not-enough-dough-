@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
   initMobileMenu();
   initCounters();
+  initCrispChat();
 });
 
 /* Monochrome Floating Particles (Ink Stipple Effect) */
@@ -131,4 +132,73 @@ function initCounters() {
   }, { threshold: 0.5 });
 
   counters.forEach(counter => observer.observe(counter));
+}
+
+
+/* Crisp Headless Chat Handler */
+function initCrispChat() {
+  const chatForm = document.getElementById("chat-form");
+  const chatMessages = document.getElementById("chat-messages");
+  const chatMessageInput = document.getElementById("chat-message");
+  const chatNameInput = document.getElementById("chat-name");
+  const chatEmailInput = document.getElementById("chat-email");
+
+  if (!chatForm || !chatMessages || !chatMessageInput) return;
+
+  window.$crisp = window.$crisp || [];
+
+  // Listen for incoming operator replies from Crisp
+  window.$crisp.push(["on", "message:received", function(message) {
+    if (message && message.origin === "operator" && message.type === "text") {
+      appendMessage("operator", "JORDAN & KELLY // SUPPORT", message.content);
+    }
+  }]);
+
+  chatForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const userMessage = chatMessageInput.value.trim();
+    if (!userMessage) return;
+
+    if (chatEmailInput && chatEmailInput.value.trim()) {
+      window.$crisp.push(["set", "user:email", [chatEmailInput.value.trim()]]);
+    }
+    if (chatNameInput && chatNameInput.value.trim()) {
+      window.$crisp.push(["set", "user:nickname", [chatNameInput.value.trim()]]);
+    }
+
+    // Forward message to Crisp
+    window.$crisp.push(["do", "message:send", ["text", userMessage]]);
+
+    // Append message to custom message container
+    const senderName = chatNameInput && chatNameInput.value.trim() ? chatNameInput.value.trim().toUpperCase() : "YOU";
+    appendMessage("user", senderName, userMessage);
+
+    // Clear textarea input
+    chatMessageInput.value = "";
+  });
+
+  function appendMessage(senderType, senderName, text) {
+    const emptyNotice = chatMessages.querySelector(".chat-empty-notice");
+    if (emptyNotice) {
+      emptyNotice.remove();
+    }
+
+    const msgDiv = document.createElement("div");
+    msgDiv.className = `chat-message ${senderType}-message`;
+
+    const senderDiv = document.createElement("div");
+    senderDiv.className = "chat-sender";
+    senderDiv.textContent = senderName;
+
+    const contentDiv = document.createElement("div");
+    contentDiv.style.whiteSpace = "pre-wrap";
+    contentDiv.textContent = text;
+
+    msgDiv.appendChild(senderDiv);
+    msgDiv.appendChild(contentDiv);
+
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
 }
