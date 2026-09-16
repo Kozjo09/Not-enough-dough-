@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Overlay Scanlines -->
+  <!-- Overlay Halftone / Scanline Pattern -->
   <div class="scanlines"></div>
 
   <!-- Navigation -->
@@ -43,42 +43,41 @@
     <!-- Page Header -->
     <section style="padding: 4rem 0 2rem; text-align: center;">
       <div class="container">
-        <div class="tag text-pink" style="margin-bottom: 1rem; border-color: var(--accent-pink);">
-          🎬 DIVISION 02 // DOUGH ENTERTAINMENT SYNDICATE
-        </div>
-        <h1 class="glow-pink" style="font-size: 3.5rem; margin-bottom: 1rem;">
-          HIGH-OCTANE <span class="text-gold">ENTERTAINMENT</span>
+        <div class="japanese-title" style="margin-bottom: 0.5rem;">エンターテインメント部門 // DIVISION 02</div>
+        <h1 style="font-size: 3rem; margin-bottom: 0.75rem;">
+          DOUGH <span class="text-white">ENTERTAINMENT</span>
         </h1>
-        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
-          Cinematic blockbusters, global podcast networks, holographic tours, and record-breaking studio releases.
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1rem;">
+          Cinematic anime productions, global podcast networks, and studio releases under Jordan & Kelly's creative direction.
         </p>
       </div>
     </section>
 
     <!-- Audio Player & Visualizer Section -->
-    <section style="background: rgba(18, 12, 24, 0.85); border-y: 1px solid var(--border-color);">
+    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-title">
-          <h2>AUDIO VAULT & <span class="text-pink glow-pink">SPECTRUM PLAYER</span></h2>
-          <p>Stream the official Dough Records synthwave soundtrack and podcast episodes.</p>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">音響波形 // SPECTRUM PLAYER</div>
+          <h2>MONOCHROME <span class="text-white">AUDIO VAULT</span></h2>
+          <p>Stream official Dough Records soundscapes and podcast feeds.</p>
         </div>
 
-        <div class="card" style="max-width: 720px; margin: 0 auto; border-color: var(--accent-pink);">
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="card" style="max-width: 680px; margin: 0 auto;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
             <!-- Canvas Visualizer -->
-            <canvas id="spectrum-canvas" width="600" height="120" style="background:#05050a; border-radius:8px; border:1px solid var(--border-color); width:100%;"></canvas>
+            <canvas id="spectrum-canvas" width="600" height="100" style="background:#000; border-radius:4px; border:1px solid var(--border-color); width:100%;"></canvas>
 
             <!-- Track Info -->
             <div style="text-align: center;">
-              <h3 id="current-track-title" class="text-gold" style="font-size: 1.3rem;">NOT ENOUGH DOUGH - CYBERPUNK THEME</h3>
-              <p id="current-track-artist" style="color: var(--text-secondary); font-size: 0.95rem;">Dough Records feat. Jordan & Kelly</p>
+              <h3 id="current-track-title" class="text-white" style="font-size: 1.15rem;">NOT ENOUGH DOUGH - MONOCHROME THEME</h3>
+              <p id="current-track-artist" style="color: var(--text-muted); font-size: 0.85rem;">Dough Records feat. Jordan & Kelly</p>
             </div>
 
             <!-- Player Controls -->
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <button id="prev-track-btn" class="btn btn-outline">⏮️ PREV</button>
-              <button id="play-audio-btn" class="btn btn-primary">▶️ PLAY SYNTH</button>
-              <button id="next-track-btn" class="btn btn-outline">NEXT ⏭️</button>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; justify-content: center;">
+              <button id="prev-track-btn" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">⏮️ PREV</button>
+              <button id="play-audio-btn" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">▶️ PLAY AUDIO</button>
+              <button id="next-track-btn" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">NEXT ⏭️</button>
             </div>
           </div>
         </div>
@@ -89,47 +88,48 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <h2>FEATURED <span class="text-gold">PRODUCTIONS</span></h2>
-          <p>Watch and listen to the highest rated entertainment in the syndicate network.</p>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">制作作品 // PRODUCTIONS</div>
+          <h2>FEATURED <span class="text-white">STUDIO MEDIA</span></h2>
+          <p>Watch and listen to top productions across the network.</p>
         </div>
 
         <div class="grid-3">
           <!-- Show 1 -->
           <div class="card">
-            <div class="tag text-gold" style="margin-bottom:0.75rem;">PODCAST NETWORK</div>
-            <h3 class="text-gold">THE DOUGH TALK SHOW</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0.75rem 0 1.25rem;">
-              Hosted live by Jordan & Kelly. Unfiltered conversations on wealth creation, AI disruption, and global entertainment.
+            <div class="tag" style="margin-bottom:0.75rem;">PODCAST NETWORK</div>
+            <h3>THE DOUGH TALK SHOW</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
+              Hosted by Jordan & Kelly. In-depth conversations on wealth creation, AI, and media culture.
             </p>
-            <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-size:space-between; align-items:center;">
-              <span class="text-cyan" style="font-size:0.85rem; font-family:var(--font-heading);">EPISODE #142 LIVE</span>
-              <button class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.75rem;" onclick="alert('Streaming Episode #142...')">LISTEN 🎧</button>
+            <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-content:space-between; align-items:center;">
+              <span class="text-white" style="font-size:0.8rem; font-family:var(--font-heading);">EPISODE #142</span>
+              <button class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.75rem;" onclick="alert('Streaming Episode #142...')">LISTEN 🎧</button>
             </div>
           </div>
 
           <!-- Show 2 -->
           <div class="card">
-            <div class="tag text-pink" style="margin-bottom:0.75rem;">CINEMATIC FILM</div>
-            <h3 class="text-pink">NOT ENOUGH DOUGH: THE MOVIE</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0.75rem 0 1.25rem;">
-              The origin story of how two visionaries built a multi-billion dollar tech and gaming dynasty.
+            <div class="tag" style="margin-bottom:0.75rem;">CINEMATIC FILM</div>
+            <h3>NOT ENOUGH DOUGH: THE MOVIE</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
+              The story of how two visionaries built a multi-industry tech and gaming dynasty.
             </p>
             <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-content:space-between; align-items:center;">
-              <span class="text-gold" style="font-size:0.85rem; font-family:var(--font-heading);">BOX OFFICE: $1.2B</span>
-              <button class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.75rem;" onclick="alert('Playing Official Trailer...')">TRAILER 🍿</button>
+              <span class="text-white" style="font-size:0.8rem; font-family:var(--font-heading);">BOX OFFICE: $1.2B</span>
+              <button class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.75rem;" onclick="alert('Playing Official Trailer...')">TRAILER 🍿</button>
             </div>
           </div>
 
           <!-- Show 3 -->
           <div class="card">
-            <div class="tag text-cyan" style="margin-bottom:0.75rem;">ANIMATED SERIES</div>
-            <h3 class="text-cyan">BAKER SYNDICATE 2099</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0.75rem 0 1.25rem;">
-              An anime series following elite cyberpunk operatives defending the dough vaults.
+            <div class="tag" style="margin-bottom:0.75rem;">ANIMATED SERIES</div>
+            <h3>BAKER SYNDICATE 2099</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
+              An anime series following elite operatives defending the company's quantum vaults.
             </p>
             <div style="border-top:1px solid var(--border-color); padding-top:1rem; display:flex; justify-content:space-between; align-items:center;">
-              <span class="text-pink" style="font-size:0.85rem; font-family:var(--font-heading);">SEASON 2 STREAMING</span>
-              <button class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.75rem;" onclick="alert('Opening Anime Stream...')">WATCH 📺</button>
+              <span class="text-white" style="font-size:0.8rem; font-family:var(--font-heading);">SEASON 2 STREAMING</span>
+              <button class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.75rem;" onclick="alert('Opening Stream...')">WATCH 📺</button>
             </div>
           </div>
         </div>
@@ -140,27 +140,28 @@
     <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-title">
-          <h2>2026 WORLD <span class="text-gold">HOLOGRAPHIC TOUR</span></h2>
-          <p>Catch Jordan and Kelly live at our global stadium tech & music experiences.</p>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">ワールドツアー // WORLD TOUR</div>
+          <h2>2026 GLOBAL <span class="text-white">CONFERENCES</span></h2>
+          <p>Catch Jordan and Kelly live at executive tech & media keynotes.</p>
         </div>
 
         <div class="grid-2">
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <div>
-              <div class="tag text-gold">TOKYO DOME - JAPAN</div>
-              <h4 style="margin-top:0.5rem;">NEO-DOUGH MUSIC FESTIVAL</h4>
-              <p style="color:var(--text-secondary); font-size:0.85rem;">Featuring live holograms & synthwave DJs.</p>
+              <div class="tag">TOKYO DOME - JAPAN</div>
+              <h4 style="margin-top:0.5rem;">NEO-DOUGH MEDIA CONVENTION</h4>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Keynotes by Jordan & Kelly.</p>
             </div>
-            <button class="btn btn-primary" onclick="alert('Tickets Reserved!')">VIP TICKETS 🎟️</button>
+            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="alert('Pass Reserved!')">PASS 🎟️</button>
           </div>
 
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <div>
-              <div class="tag text-cyan">MADISON SQUARE GARDEN - NYC</div>
+              <div class="tag">MADISON SQUARE GARDEN - NYC</div>
               <h4 style="margin-top:0.5rem;">DOUGH TECH CON 2026</h4>
-              <p style="color:var(--text-secondary); font-size:0.85rem;">Keynote address by Jordan & Kelly.</p>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Global ecosystem summit.</p>
             </div>
-            <button class="btn btn-cyan" onclick="alert('Pass Claimed!')">PASS 🎟️</button>
+            <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="alert('Pass Claimed!')">PASS 🎟️</button>
           </div>
         </div>
       </div>

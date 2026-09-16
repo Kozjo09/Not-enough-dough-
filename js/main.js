@@ -1,4 +1,4 @@
-/* --- NOT ENOUGH DOUGH COMMON JAVASCRIPT & UTILITIES --- */
+/* --- NOT ENOUGH DOUGH MONOCHROME ANIME JS UTILITIES --- */
 
 document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
 });
 
-/* Background Particle Canvas Animation */
+/* Monochrome Floating Particles (Ink Stipple Effect) */
 function initParticleCanvas() {
   const canvas = document.createElement('canvas');
   canvas.id = 'bg-canvas';
@@ -23,7 +23,7 @@ function initParticleCanvas() {
   });
 
   const particles = [];
-  const particleCount = Math.floor((width * height) / 18000);
+  const particleCount = Math.floor((width * height) / 20000);
 
   class Particle {
     constructor() {
@@ -33,11 +33,10 @@ function initParticleCanvas() {
     reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 2 + 1;
-      this.color = Math.random() > 0.4 ? 'rgba(255, 215, 0, ' : 'rgba(0, 240, 255, ';
-      this.alpha = Math.random() * 0.5 + 0.2;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.radius = Math.random() * 1.5 + 0.5;
+      this.alpha = Math.random() * 0.3 + 0.1;
     }
 
     update() {
@@ -51,9 +50,7 @@ function initParticleCanvas() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + this.alpha + ')';
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = this.color + '0.8)';
+      ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
       ctx.fill();
     }
   }
@@ -65,7 +62,6 @@ function initParticleCanvas() {
   function animate() {
     ctx.clearRect(0, 0, width, height);
 
-    // Draw connecting lines between close particles
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
       particles[i].draw();
@@ -75,11 +71,11 @@ function initParticleCanvas() {
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 120) {
+        if (dist < 100) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(255, 215, 0, ${0.15 * (1 - dist / 120)})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${0.08 * (1 - dist / 100)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -92,7 +88,7 @@ function initParticleCanvas() {
   animate();
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Navigation Toggle */
 function initMobileMenu() {
   const toggle = document.querySelector('.mobile-toggle');
   const nav = document.querySelector('.nav-links');
@@ -105,7 +101,7 @@ function initMobileMenu() {
   }
 }
 
-/* Sound Effects & Web Audio Synthesizer */
+/* Subtle Web Audio Synthesizer Beeps */
 let audioCtx = null;
 let soundEnabled = true;
 
@@ -119,26 +115,25 @@ function initAudioEffects() {
     }
     soundEnabled = !soundEnabled;
     btn.innerHTML = soundEnabled ? '🔊 SOUND: ON' : '🔇 SOUND: OFF';
-    if (soundEnabled) playSynthBeep(600, 0.1);
+    if (soundEnabled) playSynthBeep(440, 0.08);
   });
 
-  // Attach sound feedback to buttons and interactive elements
   document.querySelectorAll('.btn, .card, .nav-links a').forEach(el => {
     el.addEventListener('mouseenter', () => {
       if (soundEnabled && audioCtx) {
-        playSynthBeep(800, 0.03);
+        playSynthBeep(600, 0.02);
       }
     });
 
     el.addEventListener('click', () => {
       if (soundEnabled && audioCtx) {
-        playSynthBeep(1200, 0.08);
+        playSynthBeep(880, 0.05);
       }
     });
   });
 }
 
-function playSynthBeep(freq = 440, duration = 0.1) {
+function playSynthBeep(freq = 440, duration = 0.08) {
   if (!soundEnabled) return;
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -150,11 +145,11 @@ function playSynthBeep(freq = 440, duration = 0.1) {
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
 
-  osc.type = 'sine';
+  osc.type = 'triangle';
   osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(freq / 2, audioCtx.currentTime + duration);
+  osc.frequency.exponentialRampToValueAtTime(freq / 1.5, audioCtx.currentTime + duration);
 
-  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
   gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
 
   osc.connect(gain);
@@ -164,7 +159,7 @@ function playSynthBeep(freq = 440, duration = 0.1) {
   osc.stop(audioCtx.currentTime + duration);
 }
 
-/* Animated Stat Counters */
+/* Animated Counters */
 function initCounters() {
   const counters = document.querySelectorAll('.counter');
   if (!counters.length) return;
@@ -176,13 +171,13 @@ function initCounters() {
         const prefix = entry.target.getAttribute('data-prefix') || '';
         const suffix = entry.target.getAttribute('data-suffix') || '';
         let count = 0;
-        const speed = target / 50;
+        const speed = target / 40;
 
         const updateCount = () => {
           count += speed;
           if (count < target) {
             entry.target.innerText = prefix + Math.ceil(count).toLocaleString() + suffix;
-            setTimeout(updateCount, 20);
+            setTimeout(updateCount, 25);
           } else {
             entry.target.innerText = prefix + target.toLocaleString() + suffix;
           }

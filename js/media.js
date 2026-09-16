@@ -1,4 +1,4 @@
-/* --- DOUGH ENTERTAINMENT INTERACTIVE MEDIA & SPECTRUM VISUALIZER --- */
+/* --- DOUGH ENTERTAINMENT MONOCHROME SPECTRUM VISUALIZER --- */
 
 document.addEventListener('DOMContentLoaded', () => {
   initAudioPlayer();
@@ -7,14 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let currentTrack = 0;
 const tracks = [
-  { title: 'NOT ENOUGH DOUGH - CYBERPUNK THEME', artist: 'Dough Records feat. Jordan & Kelly', freq: 440 },
-  { title: 'GOLDEN LOAF (NEON REMIX)', artist: 'DJ Kelly & Jordan Beats', freq: 520 },
-  { title: 'QUANTUM BAKE BEATS', artist: 'Dough Synthwave Syndicate', freq: 380 }
+  { title: 'NOT ENOUGH DOUGH - MONOCHROME THEME', artist: 'Dough Records feat. Jordan & Kelly', freq: 440 },
+  { title: 'SILENT LOAF (AMBIENT REMIX)', artist: 'DJ Kelly & Jordan Beats', freq: 520 },
+  { title: 'QUANTUM BAKE SOUNDSCAPES', artist: 'Dough Synth Syndicate', freq: 380 }
 ];
 
 let isPlaying = false;
-let audioVisualizerCtx = null;
-let animId = null;
 
 function initAudioPlayer() {
   const playBtn = document.getElementById('play-audio-btn');
@@ -27,10 +25,10 @@ function initAudioPlayer() {
 
   playBtn.addEventListener('click', () => {
     isPlaying = !isPlaying;
-    playBtn.innerText = isPlaying ? '⏸️ PAUSE SYNTH' : '▶️ PLAY SYNTH';
+    playBtn.innerText = isPlaying ? '⏸️ PAUSE AUDIO' : '▶️ PLAY AUDIO';
 
-    if (isPlaying) {
-      if (typeof playSynthBeep === 'function') playSynthBeep(tracks[currentTrack].freq, 0.5);
+    if (isPlaying && typeof playSynthBeep === 'function') {
+      playSynthBeep(tracks[currentTrack].freq, 0.4);
     }
   });
 
@@ -52,7 +50,7 @@ function initAudioPlayer() {
     if (trackTitleEl) trackTitleEl.innerText = tracks[currentTrack].title;
     if (trackArtistEl) trackArtistEl.innerText = tracks[currentTrack].artist;
     if (isPlaying && typeof playSynthBeep === 'function') {
-      playSynthBeep(tracks[currentTrack].freq, 0.4);
+      playSynthBeep(tracks[currentTrack].freq, 0.3);
     }
   }
 }
@@ -66,20 +64,15 @@ function initSpectrumVisualizer() {
   function renderVisualizer() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const bars = 32;
+    const bars = 36;
     const barWidth = (canvas.width / bars) - 2;
 
     for (let i = 0; i < bars; i++) {
       let height = isPlaying
-        ? Math.random() * (canvas.height - 20) + 10
-        : Math.sin(Date.now() * 0.003 + i) * 15 + 20;
+        ? Math.random() * (canvas.height - 15) + 10
+        : Math.sin(Date.now() * 0.002 + i) * 12 + 15;
 
-      const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
-      gradient.addColorStop(0, '#ffd700');
-      gradient.addColorStop(0.5, '#ff007f');
-      gradient.addColorStop(1, '#00f0ff');
-
-      ctx.fillStyle = gradient;
+      ctx.fillStyle = i % 2 === 0 ? '#ffffff' : '#8e8e99';
       ctx.fillRect(i * (barWidth + 2), canvas.height - height, barWidth, height);
     }
 

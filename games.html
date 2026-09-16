@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Overlay Scanlines -->
+  <!-- Overlay Halftone / Scanline Pattern -->
   <div class="scanlines"></div>
 
   <!-- Navigation -->
@@ -43,32 +43,31 @@
     <!-- Page Header -->
     <section style="padding: 4rem 0 2rem; text-align: center;">
       <div class="container">
-        <div class="tag text-cyan" style="margin-bottom: 1rem; border-color: var(--accent-cyan);">
-          🕹️ DIVISION 01 // DOUGH GAMES SYNDICATE
-        </div>
-        <h1 class="glow-cyan" style="font-size: 3.5rem; margin-bottom: 1rem;">
-          HIGH-STAKES <span class="text-gold">GAMING</span>
+        <div class="japanese-title" style="margin-bottom: 0.5rem;">ゲーム部門 // DIVISION 01</div>
+        <h1 style="font-size: 3rem; margin-bottom: 0.75rem;">
+          DOUGH <span class="text-white">GAMES</span>
         </h1>
-        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
-          From AAA open-world cyberpunk adventures to intense esports bake-offs. Owned and overseen by Jordan & Kelly.
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1rem;">
+          From AAA open-world manga action RPGs to intense esports arenas. Co-founded and produced by Jordan & Kelly.
         </p>
       </div>
     </section>
 
     <!-- Playable Live Mini-Game Section -->
-    <section style="background: rgba(10, 10, 18, 0.8); border-y: 1px solid var(--border-color);">
+    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-title">
-          <h2>PLAY LIVE: <span class="text-gold glow-gold">DOUGH RUSH 2099</span></h2>
-          <p>Catch falling gold dough coins and cyber gems. Avoid glitch bombs!</p>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">アーケード // LIVE ARCADE</div>
+          <h2>MANGA <span class="text-white">DOUGH RUSH</span></h2>
+          <p>Catch falling dough coins and gems. Avoid glitch bombs!</p>
         </div>
 
         <div class="game-container">
           <!-- Game HUD -->
-          <div style="display: flex; gap: 2rem; font-family: var(--font-heading); font-size: 1.1rem; background: var(--bg-card); padding: 0.75rem 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
-            <div>SCORE: <span id="game-score" class="text-gold" style="font-weight:900;">0</span></div>
-            <div>LIVES: <span id="game-lives">❤️❤️❤️</span></div>
-            <div>LEVEL: <span id="game-level" class="text-cyan">1</span></div>
+          <div style="display: flex; gap: 2rem; font-family: var(--font-heading); font-size: 1rem; background: var(--bg-card); padding: 0.75rem 2rem; border-radius: 4px; border: 1px solid var(--border-color);">
+            <div>SCORE: <span id="game-score" class="text-white" style="font-weight:900;">0</span></div>
+            <div>LIVES: <span id="game-lives">🖤🖤🖤</span></div>
+            <div>LEVEL: <span id="game-level" class="text-white">1</span></div>
           </div>
 
           <!-- Canvas Frame -->
@@ -76,7 +75,7 @@
 
           <div class="game-controls">
             <button id="start-game-btn" class="btn btn-primary">START GAME 🎮</button>
-            <span style="color: var(--text-secondary); font-size: 0.85rem;">Use <strong>[← / →]</strong> or <strong>[A / D]</strong> or Move Mouse</span>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Controls: <strong>[← / →]</strong> or <strong>[A / D]</strong> or Mouse / Touch</span>
           </div>
         </div>
       </div>
@@ -86,87 +85,58 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <h2>FLAGSHIP <span class="text-gold">RELEASES</span></h2>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">作品一覧 // FLAGSHIP TITLES</div>
+          <h2>CURRENT <span class="text-white">RELEASES</span></h2>
           <p>Explore our lineup of award-winning titles dominating platforms globally.</p>
         </div>
 
         <div class="grid-3">
           <!-- Game 1 -->
           <div class="card">
-            <div style="height: 180px; background: linear-gradient(135deg, #1a0033, #330066); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border: 1px solid var(--accent-purple);">
-              <span style="font-size: 4rem;">🏙️</span>
-              <div class="tag text-gold" style="position: absolute; top: 10px; right: 10px;">AAA RELEASE</div>
+            <div style="height: 160px; background: #121216; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; border: 1px solid var(--border-color); position: relative;">
+              <span style="font-size: 3.5rem;">🏙️</span>
+              <div class="tag" style="position: absolute; top: 10px; right: 10px;">MANGA EDITION</div>
             </div>
-            <h3 class="text-gold">CYBERDOUGH 2099</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0 1.25rem;">
-              An open-world neon action RPG where players fight rival baking syndicates across Neo-Tokyo.
+            <h3>CYBERDOUGH 2099</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 1.25rem;">
+              An open-world action RPG where players fight rival baking syndicates across Neo-Tokyo.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="text-cyan" style="font-weight: bold; font-family: var(--font-heading);">RATING: 9.9/10</span>
-              <button class="btn btn-outline" onclick="alert('Downloading CyberDough 2099 Demo launcher...')">DEMO 💾</button>
+              <span class="text-white" style="font-weight: bold; font-family: var(--font-heading); font-size: 0.85rem;">RATING: 9.9/10</span>
+              <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="alert('Downloading Demo launcher...')">DEMO 💾</button>
             </div>
           </div>
 
           <!-- Game 2 -->
           <div class="card">
-            <div style="height: 180px; background: linear-gradient(135deg, #002b36, #005f73); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border: 1px solid var(--accent-cyan);">
-              <span style="font-size: 4rem;">⚔️</span>
-              <div class="tag text-cyan" style="position: absolute; top: 10px; right: 10px;">ESPORTS READY</div>
+            <div style="height: 160px; background: #121216; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; border: 1px solid var(--border-color); position: relative;">
+              <span style="font-size: 3.5rem;">⚔️</span>
+              <div class="tag" style="position: absolute; top: 10px; right: 10px;">ESPORTS READY</div>
             </div>
-            <h3 class="text-cyan">BAKER'S WRATH</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0 1.25rem;">
+            <h3>BAKER'S WRATH</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 1.25rem;">
               A competitive 5v5 hero shooter set in futuristic kitchen arenas with $5M tournament prize pools.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="text-gold" style="font-weight: bold; font-family: var(--font-heading);">ACTIVE: 2.4M</span>
-              <button class="btn btn-outline" onclick="alert('Joining Esports queue...')">JOIN 🏆</button>
+              <span class="text-white" style="font-weight: bold; font-family: var(--font-heading); font-size: 0.85rem;">ACTIVE: 2.4M</span>
+              <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="alert('Joining Esports queue...')">JOIN 🏆</button>
             </div>
           </div>
 
           <!-- Game 3 -->
           <div class="card">
-            <div style="height: 180px; background: linear-gradient(135deg, #33001a, #660033); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border: 1px solid var(--accent-pink);">
-              <span style="font-size: 4rem;">🚀</span>
-              <div class="tag text-pink" style="position: absolute; top: 10px; right: 10px;">COMING SOON</div>
+            <div style="height: 160px; background: #121216; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; border: 1px solid var(--border-color); position: relative;">
+              <span style="font-size: 3.5rem;">🚀</span>
+              <div class="tag" style="position: absolute; top: 10px; right: 10px;">COMING SOON</div>
             </div>
-            <h3 class="text-pink">DOUGH ROYALE</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0 1.25rem;">
+            <h3>DOUGH ROYALE</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 1.25rem;">
               100-player battle royale where only one baker extracts with the legendary golden loaf.
             </p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="text-pink" style="font-weight: bold; font-family: var(--font-heading);">BETA Q4 2026</span>
-              <button class="btn btn-outline" onclick="alert('Added to Playtest Beta Whitelist!')">WISHLIST ⭐</button>
+              <span class="text-white" style="font-weight: bold; font-family: var(--font-heading); font-size: 0.85rem;">BETA Q4 2026</span>
+              <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="alert('Added to Playtest Whitelist!')">WISHLIST ⭐</button>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Release Roadmap -->
-    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
-      <div class="container">
-        <div class="section-title">
-          <h2>DEVELOPMENT <span class="text-gold">ROADMAP</span></h2>
-          <p>Upcoming gaming drops curated directly by Jordan and Kelly.</p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px; margin: 0 auto;">
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div class="tag text-gold" style="margin-bottom:0.5rem;">Q3 2026</div>
-              <h4>CYBERDOUGH 2099: NEON EXPANSION</h4>
-              <p style="color:var(--text-secondary); font-size:0.9rem;">New storyline DLC featuring Jordan and Kelly boss battles.</p>
-            </div>
-            <span class="text-cyan" style="font-weight:bold; font-family:var(--font-heading);">IN PROGRESS</span>
-          </div>
-
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div class="tag text-cyan" style="margin-bottom:0.5rem;">Q4 2026</div>
-              <h4>DOUGH VR MATRIX SIMULATOR</h4>
-              <p style="color:var(--text-secondary); font-size:0.9rem;">Full haptic feedback virtual reality baking mechanics.</p>
-            </div>
-            <span class="text-gold" style="font-weight:bold; font-family:var(--font-heading);">ALPHA TESTING</span>
           </div>
         </div>
       </div>

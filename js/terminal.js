@@ -1,4 +1,4 @@
-/* --- DOUGH TECHNOLOGIES INTERACTIVE TERMINAL SIMULATOR --- */
+/* --- DOUGH TECHNOLOGIES MONOCHROME TERMINAL SIMULATOR --- */
 
 document.addEventListener('DOMContentLoaded', () => {
   const terminalBody = document.getElementById('terminal-body');
@@ -8,33 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const commands = {
     'help': `AVAILABLE DOUGH COMMANDS:
-  - <span class="text-gold">status</span>       : Display real-time quantum network & cloud status.
-  - <span class="text-gold">founders</span>     : Display intelligence dossier on Jordan & Kelly.
-  - <span class="text-gold">tech-specs</span>   : View DoughAI and Quantum Bake architecture specs.
-  - <span class="text-gold">bake</span>         : Run AI baking algorithm simulation.
-  - <span class="text-gold">clear</span>        : Clear the terminal output display.
-  - <span class="text-gold">matrix</span>       : Toggle quantum visual stream.`,
+  - <span class="text-white">status</span>       : Display system uptime & cloud status.
+  - <span class="text-white">founders</span>     : Display dossier on Jordan & Kelly.
+  - <span class="text-white">tech-specs</span>   : View DoughAI and Quantum Bake specs.
+  - <span class="text-white">bake</span>         : Run AI algorithm simulation.
+  - <span class="text-white">clear</span>        : Clear terminal output.`,
 
-    'status': `<span class="text-cyan">[SYSTEM STATUS OK]</span>
+    'status': `<span class="text-white">[SYSTEM STATUS OK]</span>
   - DoughAI Cluster: ONLINE (99.99% Uptime)
-  - Quantum Bake Latency: 0.002ms
+  - Quantum Latency: 0.002ms
   - Global Nodes: Tokyo, New York, Amsterdam, Singapore, London
-  - Security Clearance: LEVEL 5 ALPHA (JORDAN & KELLY APPROVED)`,
+  - Security Clearance: LEVEL 5 (JORDAN & KELLY APPROVED)`,
 
-    'founders': `<span class="text-gold">[EXECUTIVE DOSSIER]</span>
-  - <span class="text-gold">JORDAN</span>: Co-Founder & CEO. Chief Architect of Dough Technologies. Mastermind of the global expansion strategy.
-  - <span class="text-gold">KELLY</span>: Co-Founder & CCO. Creative Director & Chief Innovation Officer. Pioneer of Dough UI/UX & media systems.`,
+    'founders': `<span class="text-white">[EXECUTIVE DOSSIER]</span>
+  - <span class="text-white">JORDAN</span>: Co-Founder & CEO. Chief Architect of Dough Technologies.
+  - <span class="text-white">KELLY</span>: Co-Founder & CCO. Chief Innovation Officer & Media Director.`,
 
-    'tech-specs': `<span class="text-purple">[SPECIFICATIONS ARCHITECTURE v4.2]</span>
-  - Neural Engine: 100,000 TFLOPS Quantum Dough Processing Unit (QDPU)
+    'tech-specs': `<span class="text-white">[SPECIFICATIONS ARCHITECTURE v4.2]</span>
+  - Neural Engine: 100,000 TFLOPS Quantum Processing Unit (QDPU)
   - Consensus Mechanism: Proof-of-Stake-and-Bake (PoSB)
-  - Encryption: 4096-bit Post-Quantum Lattice Encryption`,
+  - Encryption: 4096-bit Post-Quantum Lattice Cryptography`,
 
-    'bake': `<span class="text-gold">[EXECUTING AI BAKE ALGORITHM...]</span>
+    'bake': `<span class="text-white">[EXECUTING AI ALGORITHM...]</span>
   > Analyzing market liquidity... [OK]
-  > Calculating optimal dough ratio... [OK]
-  > Infusing cyber-yeast data packets... [OK]
-  > <span class="text-cyan">BAKE COMPLETE! +$1,000,000 DOUGH CAPITAL GENERATED!</span>`
+  > Calculating dough ratio... [OK]
+  > <span class="text-white">BAKE COMPLETE! +$1,000,000 DOUGH CAPITAL GENERATED!</span>`
   };
 
   terminalInput.addEventListener('keydown', (e) => {
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const commandText = terminalInput.value.trim().toLowerCase();
       terminalInput.value = '';
 
-      // Print command entry line
       const cmdLine = document.createElement('div');
       cmdLine.className = 'terminal-line';
       cmdLine.innerHTML = `<span class="terminal-prompt">dough-cli@tech:~$</span> ${escapeHtml(commandText)}`;
@@ -61,14 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (commandText === '') {
         return;
       } else {
-        responseLine.innerHTML = `<span class="text-pink">Command not recognized: '${escapeHtml(commandText)}'. Type <span class="text-gold">help</span> for command list.</span>`;
+        responseLine.innerHTML = `<span class="text-muted">Command not recognized: '${escapeHtml(commandText)}'. Type <span class="text-white">help</span> for list.</span>`;
       }
 
       terminalBody.appendChild(responseLine);
       terminalBody.scrollTop = terminalBody.scrollHeight;
 
       if (typeof playSynthBeep === 'function') {
-        playSynthBeep(1000, 0.05);
+        playSynthBeep(800, 0.04);
       }
     }
   });

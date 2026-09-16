@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Overlay Scanlines -->
+  <!-- Overlay Halftone / Scanline Pattern -->
   <div class="scanlines"></div>
 
   <!-- Navigation -->
@@ -43,44 +43,43 @@
     <!-- Page Header -->
     <section style="padding: 4rem 0 2rem; text-align: center;">
       <div class="container">
-        <div class="tag text-gold" style="margin-bottom: 1rem; border-color: var(--accent-gold);">
-          💻 DIVISION 03 // DOUGH TECHNOLOGIES LABS
-        </div>
-        <h1 class="glow-gold" style="font-size: 3.5rem; margin-bottom: 1rem;">
-          QUANTUM TECH <span class="text-cyan">MATRIX</span>
+        <div class="japanese-title" style="margin-bottom: 0.5rem;">技術部門 // DIVISION 03</div>
+        <h1 style="font-size: 3rem; margin-bottom: 0.75rem;">
+          DOUGH <span class="text-white">TECHNOLOGIES</span>
         </h1>
-        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
-          Powering the syndicate with high-frequency AI models, sub-millisecond cloud architecture, and post-quantum security.
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1rem;">
+          Powering the syndicate with neural AI models, sub-millisecond cloud architecture, and post-quantum security.
         </p>
       </div>
     </section>
 
     <!-- Interactive Terminal Section -->
-    <section style="background: rgba(8, 12, 20, 0.9); border-y: 1px solid var(--border-color);">
+    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-title">
-          <h2>LIVE COMMAND <span class="text-cyan glow-cyan">CLI TERMINAL</span></h2>
-          <p>Interact directly with the Dough Technologies cloud OS. Type <span class="text-gold">help</span> or <span class="text-gold">bake</span> to begin.</p>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">コマンドライン // CLI TERMINAL</div>
+          <h2>SYSTEM <span class="text-white">TERMINAL</span></h2>
+          <p>Interact directly with Dough Technologies OS. Type <span class="text-white">help</span> or <span class="text-white">bake</span> to begin.</p>
         </div>
 
-        <div class="terminal-window" style="max-width: 850px; margin: 0 auto;">
+        <div class="terminal-window" style="max-width: 800px; margin: 0 auto;">
           <div class="terminal-header">
             <div class="terminal-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
             </div>
-            <div class="terminal-title">dough-cli --v4.2.0-quantum --user@jordan-kelly-hq</div>
-            <div>⚡ 99.99%</div>
+            <div class="terminal-title">dough-cli --v4.2.0 --user@jordan-kelly-hq</div>
+            <div>STATUS: OK</div>
           </div>
 
           <div id="terminal-body" class="terminal-body">
-            <div class="terminal-line"><span class="text-gold">INITIALIZING DOUGH QUANTUM CLI...</span></div>
-            <div class="terminal-line"><span class="text-cyan">CONNECTED TO EXECUTIVE MAINNET [NOD-US-EAST-01]</span></div>
-            <div class="terminal-line">Type <span class="text-gold">help</span> for command directory, or <span class="text-gold">founders</span> for co-founder info.</div>
+            <div class="terminal-line"><span class="text-white">INITIALIZING DOUGH QUANTUM CLI...</span></div>
+            <div class="terminal-line"><span class="text-white">CONNECTED TO MAINNET [NOD-US-EAST-01]</span></div>
+            <div class="terminal-line">Type <span class="text-white">help</span> for commands, or <span class="text-white">founders</span> for co-founder info.</div>
           </div>
 
-          <div style="padding: 0.75rem 1.5rem; background: #08080c; border-top: 1px solid var(--border-color);">
+          <div style="padding: 0.75rem 1.25rem; background: #08080a; border-top: 1px solid var(--border-color);">
             <div class="terminal-input-row">
               <span class="terminal-prompt">dough-cli@tech:~$</span>
               <input type="text" id="terminal-input" class="terminal-input" placeholder="type a command (e.g. help, bake, status, founders)..." autofocus>
@@ -94,19 +93,20 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <h2>CORE TECH <span class="text-gold">PILLARS</span></h2>
+          <div class="japanese-title" style="margin-bottom: 0.5rem;">技術基盤 // TECH PILLARS</div>
+          <h2>CORE <span class="text-white">ARCHITECTURE</span></h2>
           <p>Patented technological breakthroughs engineered under the direction of Jordan & Kelly.</p>
         </div>
 
         <div class="grid-3">
           <!-- Pillar 1 -->
           <div class="card">
-            <div class="tag text-gold" style="margin-bottom:1rem;">NEURAL ARTIFICIAL INTELLIGENCE</div>
-            <h3 class="text-gold">DOUGH-AI ENGINE</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0.75rem 0 1.25rem;">
+            <div class="tag" style="margin-bottom:1rem;">NEURAL ARTIFICIAL INTELLIGENCE</div>
+            <h3>DOUGH-AI ENGINE</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
               A 500-billion parameter neural model predicting global market fluctuations and optimizing real-time game physics.
             </p>
-            <ul style="color:var(--text-secondary); font-size:0.85rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.4rem;">
+            <ul style="color:var(--text-muted); font-size:0.85rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.4rem;">
               <li>Self-optimizing node topology</li>
               <li>Autonomous trading & game NPC AI</li>
               <li>Zero-latency inference engine</li>
@@ -115,12 +115,12 @@
 
           <!-- Pillar 2 -->
           <div class="card">
-            <div class="tag text-cyan" style="margin-bottom:1rem;">QUANTUM COMPUTE</div>
-            <h3 class="text-cyan">QUANTUM BAKE TECH</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0.75rem 0 1.25rem;">
+            <div class="tag" style="margin-bottom:1rem;">QUANTUM COMPUTE</div>
+            <h3>QUANTUM BAKE TECH</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
               Sub-millisecond latency distributed serverless infrastructure handling 50,000,000 requests per second.
             </p>
-            <ul style="color:var(--text-secondary); font-size:0.85rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.4rem;">
+            <ul style="color:var(--text-muted); font-size:0.85rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.4rem;">
               <li>Edge compute nodes in 80+ countries</li>
               <li>Auto-scaling microservice mesh</li>
               <li>99.999% SLA uptime guarantee</li>
@@ -129,44 +129,16 @@
 
           <!-- Pillar 3 -->
           <div class="card">
-            <div class="tag text-purple" style="margin-bottom:1rem;">DECENTRALIZED NETWORK</div>
-            <h3 class="text-purple">DOUGHCHAIN OS</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0.75rem 0 1.25rem;">
+            <div class="tag" style="margin-bottom:1rem;">DECENTRALIZED NETWORK</div>
+            <h3>DOUGHCHAIN OS</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0.75rem 0 1.25rem;">
               Ultra-fast high-throughput protocol with Proof-of-Stake-and-Bake (PoSB) consensus securing digital assets.
             </p>
-            <ul style="color:var(--text-secondary); font-size:0.85rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.4rem;">
+            <ul style="color:var(--text-muted); font-size:0.85rem; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.4rem;">
               <li>100,000 TPS transaction bandwidth</li>
               <li>Post-quantum lattice cryptography</li>
               <li>Zero energy waste green architecture</li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Security & R&D Commitment -->
-    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
-      <div class="container">
-        <div class="section-title">
-          <h2>R&D & GLOBAL <span class="text-gold">INFRASTRUCTURE</span></h2>
-          <p>We reinvest over 40% of all company dough directly into futuristic research and development.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h4 class="text-gold" style="margin-bottom: 0.75rem;">🔒 MILITARY-GRADE ENCRYPTION</h4>
-            <p style="color: var(--text-secondary); font-size: 0.95rem;">
-              All data transmitted through Not Enough Dough systems is protected by 4096-bit post-quantum lattice encryption, ensuring absolute privacy for Jordan, Kelly, and our global partners.
-            </p>
-            <div style="margin-top: 1rem;" class="tag text-cyan">DEFENSE STATUS: ACTIVE</div>
-          </div>
-
-          <div class="card">
-            <h4 class="text-cyan" style="margin-bottom: 0.75rem;">🌐 QUANTUM DATA CENTERS</h4>
-            <p style="color: var(--text-secondary); font-size: 0.95rem;">
-              Our dedicated subsea fiber cables and orbital satellite relays establish instant communication between Dough Games, Dough Entertainment, and Dough Technologies worldwide.
-            </p>
-            <div style="margin-top: 1rem;" class="tag text-gold">PATENTS PENDING: 85+</div>
           </div>
         </div>
       </div>

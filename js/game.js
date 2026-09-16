@@ -1,4 +1,4 @@
-/* --- DOUGH GAMES CANVAS MINI-GAME: DOUGH CATCHER / BAKER RUN --- */
+/* --- DOUGH GAMES CANVAS MINI-GAME: MONOCHROME MANGA DOUGH RUSH --- */
 
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('game-canvas');
@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const livesEl = document.getElementById('game-lives');
   const levelEl = document.getElementById('game-level');
   const startBtn = document.getElementById('start-game-btn');
-  const gameMsg = document.getElementById('game-msg');
 
   let score = 0;
   let lives = 3;
@@ -17,45 +16,43 @@ document.addEventListener('DOMContentLoaded', () => {
   let gameRunning = false;
   let animationId = null;
 
-  // Paddle / Baker Cart
+  // Responsive paddle scale
   const paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 25,
     width: 80,
-    height: 15,
+    height: 12,
     speed: 7,
     dx: 0
   };
 
-  // Falling Items (Dough coins, gems, bombs)
   let items = [];
   let itemSpawnTimer = 0;
 
-  // Control Listeners
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
-      paddle.dx = -paddle.speed;
-    } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
-      paddle.dx = paddle.speed;
-    }
+    if (['ArrowLeft', 'a', 'A'].includes(e.key)) paddle.dx = -paddle.speed;
+    else if (['ArrowRight', 'd', 'D'].includes(e.key)) paddle.dx = paddle.speed;
   });
 
   document.addEventListener('keyup', (e) => {
-    if (['ArrowLeft', 'a', 'A', 'ArrowRight', 'd', 'D'].includes(e.key)) {
-      paddle.dx = 0;
-    }
+    if (['ArrowLeft', 'a', 'A', 'ArrowRight', 'd', 'D'].includes(e.key)) paddle.dx = 0;
   });
 
-  // Touch / Mouse controls for paddle
   canvas.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
-    paddle.x = mouseX - paddle.width / 2;
+    paddle.x = (mouseX * (canvas.width / rect.width)) - paddle.width / 2;
   });
 
-  if (startBtn) {
-    startBtn.addEventListener('click', startGame);
-  }
+  // Touch support for mobile devices
+  canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const touchX = e.touches[0].clientX - rect.left;
+    paddle.x = (touchX * (canvas.width / rect.width)) - paddle.width / 2;
+  }, { passive: false });
+
+  if (startBtn) startBtn.addEventListener('click', startGame);
 
   function startGame() {
     score = 0;
@@ -64,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     items = [];
     gameRunning = true;
     startBtn.innerText = 'RESTART GAME 🔄';
-    if (gameMsg) gameMsg.style.display = 'none';
     updateHUD();
 
     if (animationId) cancelAnimationFrame(animationId);
@@ -73,26 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateHUD() {
     if (scoreEl) scoreEl.innerText = score;
-    if (livesEl) livesEl.innerText = '❤️'.repeat(lives);
+    if (livesEl) livesEl.innerText = '🖤'.repeat(lives);
     if (levelEl) levelEl.innerText = level;
   }
 
   function spawnItem() {
     const types = [
-      { name: 'gold', color: '#ffd700', points: 100, symbol: '🍪', speed: 2 + level * 0.5 },
-      { name: 'cyan', color: '#00f0ff', points: 250, symbol: '💎', speed: 3 + level * 0.5 },
-      { name: 'bomb', color: '#ff0055', points: -1, symbol: '💣', speed: 2.5 + level * 0.5 }
+      { name: 'dough', points: 100, symbol: '⚪', speed: 2 + level * 0.4 },
+      { name: 'gem', points: 250, symbol: '◆', speed: 3 + level * 0.4 },
+      { name: 'bomb', points: -1, symbol: '✖', speed: 2.5 + level * 0.4 }
     ];
 
     const rand = Math.random();
     let selected = types[0];
-    if (rand > 0.85) selected = types[2]; // 15% bomb
-    else if (rand > 0.65) selected = types[1]; // 20% gem
+    if (rand > 0.82) selected = types[2]; // Bomb
+    else if (rand > 0.65) selected = types[1]; // Gem
 
     items.push({
       x: Math.random() * (canvas.width - 24),
       y: -20,
-      size: 24,
+      size: 20,
       ...selected
     });
   }
@@ -102,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw Background Grid
-    ctx.strokeStyle = 'rgba(0, 240, 255, 0.08)';
+    // Draw Subtle Manga Grid Lines
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
     ctx.lineWidth = 1;
     for (let x = 0; x < canvas.width; x += 40) {
       ctx.beginPath();
@@ -112,35 +108,32 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.stroke();
     }
 
-    // Move Paddle
+    // Move & Bound Paddle
     paddle.x += paddle.dx;
     if (paddle.x < 0) paddle.x = 0;
     if (paddle.x + paddle.width > canvas.width) paddle.x = canvas.width - paddle.width;
 
-    // Draw Paddle
-    ctx.fillStyle = '#ffd700';
-    ctx.shadowBlur = 12;
-    ctx.shadowColor = '#ffd700';
+    // Draw Monochrome Paddle
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
-    ctx.shadowBlur = 0;
 
-    // Spawn Items
+    // Item Spawning
     itemSpawnTimer++;
-    if (itemSpawnTimer > Math.max(15, 50 - level * 5)) {
+    if (itemSpawnTimer > Math.max(15, 45 - level * 4)) {
       spawnItem();
       itemSpawnTimer = 0;
     }
 
-    // Update & Draw Items
+    // Items Logic
     for (let i = items.length - 1; i >= 0; i--) {
       const item = items[i];
       item.y += item.speed;
 
-      // Draw item
-      ctx.font = '20px serif';
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '18px sans-serif';
       ctx.fillText(item.symbol, item.x, item.y);
 
-      // Collision Detection with Paddle
+      // Collision Check
       if (
         item.y + item.size >= paddle.y &&
         item.x + item.size >= paddle.x &&
@@ -148,11 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ) {
         if (item.name === 'bomb') {
           lives--;
-          if (typeof playSynthBeep === 'function') playSynthBeep(200, 0.3);
+          if (typeof playSynthBeep === 'function') playSynthBeep(200, 0.2);
         } else {
           score += item.points;
-          if (score >= level * 1000) level++;
-          if (typeof playSynthBeep === 'function') playSynthBeep(900, 0.1);
+          if (score >= level * 800) level++;
+          if (typeof playSynthBeep === 'function') playSynthBeep(700, 0.06);
         }
 
         items.splice(i, 1);
@@ -165,11 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         continue;
       }
 
-      // Missed Item
       if (item.y > canvas.height) {
-        if (item.name !== 'bomb') {
-          // Missed dough item
-        }
         items.splice(i, 1);
       }
     }
@@ -179,16 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function endGame() {
     gameRunning = false;
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#ff0055';
-    ctx.font = '900 28px Orbitron, sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '900 24px Orbitron, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 20);
+    ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 15);
 
-    ctx.fillStyle = '#ffd700';
-    ctx.font = '18px Orbitron, sans-serif';
+    ctx.font = '16px Orbitron, sans-serif';
     ctx.fillText(`FINAL DOUGH SCORE: ${score}`, canvas.width / 2, canvas.height / 2 + 20);
 
     startBtn.innerText = 'PLAY AGAIN 🎮';
