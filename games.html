@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOUGH GAMES | Gaming Division</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Overlay Pattern -->
+  <div class="scanlines"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-brand">
+        <img src="assets/logo-black.gif" alt="Not Enough Dough Logo">
+        <span class="brand-title">Not Enough Dough</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="games.html" class="active">Dough Games</a></li>
+          <li><a href="entertainment.html">Dough Entertainment</a></li>
+          <li><a href="technologies.html">Dough Technologies</a></li>
+          <li><a href="about.html">Founders & Story</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section style="padding: 3rem 0 1.5rem; text-align: center;">
+      <div class="container">
+        <div class="japanese-title" style="margin-bottom: 0.4rem;">ゲーム部門 // DIVISION 01</div>
+        <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">
+          DOUGH <span class="text-white">GAMES</span>
+        </h1>
+        <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto; font-size: 0.95rem;">
+          Our official gaming branch. Building arcade experiments, web games, and upcoming game concepts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Playable Live Mini-Game Section -->
+    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-title">
+          <div class="japanese-title" style="margin-bottom: 0.4rem;">アーケード // PLAYABLE DEMO</div>
+          <h2>MANGA <span class="text-white">DOUGH RUSH</span></h2>
+          <p>Play our built-in web game! Catch falling dough coins and gems while avoiding bombs.</p>
+        </div>
+
+        <div class="game-container">
+          <!-- Game HUD -->
+          <div style="display: flex; gap: 1.5rem; font-family: var(--font-heading); font-size: 0.9rem; background: var(--bg-card); padding: 0.6rem 1.5rem; border-radius: 4px; border: 1px solid var(--border-color);">
+            <div>SCORE: <span id="game-score" class="text-white" style="font-weight:900;">0</span></div>
+            <div>LIVES: <span id="game-lives">🖤🖤🖤</span></div>
+            <div>LEVEL: <span id="game-level" class="text-white">1</span></div>
+          </div>
+
+          <!-- Canvas Frame -->
+          <canvas id="game-canvas" width="640" height="360"></canvas>
+
+          <div class="game-controls">
+            <button id="start-game-btn" class="btn btn-primary">START GAME 🎮</button>
+            <span style="color: var(--text-muted); font-size: 0.8rem;">Controls: <strong>[← / →]</strong> or <strong>[A / D]</strong> or Mouse / Touch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Concepts in Development -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div class="japanese-title" style="margin-bottom: 0.4rem;">開発中 // CONCEPTS IN DEVELOPMENT</div>
+          <h2>UPCOMING <span class="text-white">TITLES</span></h2>
+          <p>Projects transitioning from school pitch decks into real game releases.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Concept 1 -->
+          <div class="card">
+            <div style="height: 140px; background: #121216; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <span style="font-size: 3rem;">🏙️</span>
+            </div>
+            <div class="tag" style="margin-bottom:0.5rem;">IN DEVELOPMENT</div>
+            <h3>CYBERDOUGH 2099</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+              A 2D manga cyberpunk action game set in a futuristic cityscape.
+            </p>
+          </div>
+
+          <!-- Concept 2 -->
+          <div class="card">
+            <div style="height: 140px; background: #121216; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <span style="font-size: 3rem;">⚔️</span>
+            </div>
+            <div class="tag" style="margin-bottom:0.5rem;">CONCEPT STAGE</div>
+            <h3>BAKER'S WRATH</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+              A fast-paced local multiplayer arena brawler featuring quirky characters.
+            </p>
+          </div>
+
+          <!-- Concept 3 -->
+          <div class="card">
+            <div style="height: 140px; background: #121216; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border: 1px solid var(--border-color);">
+              <span style="font-size: 3rem;">🚀</span>
+            </div>
+            <div class="tag" style="margin-bottom:0.5rem;">PROTOTYPE</div>
+            <h3>DOUGH ROYALE</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+              An survival arcade prototype built for testing game mechanics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 NOT ENOUGH DOUGH. CO-FOUNDED BY JORDAN & KELLY.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

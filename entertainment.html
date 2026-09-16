@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOUGH ENTERTAINMENT | Media & Creative Syndicate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Overlay Pattern -->
+  <div class="scanlines"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-brand">
+        <img src="assets/logo-black.gif" alt="Not Enough Dough Logo">
+        <span class="brand-title">Not Enough Dough</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="games.html">Dough Games</a></li>
+          <li><a href="entertainment.html" class="active">Dough Entertainment</a></li>
+          <li><a href="technologies.html">Dough Technologies</a></li>
+          <li><a href="about.html">Founders & Story</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section style="padding: 3rem 0 1.5rem; text-align: center;">
+      <div class="container">
+        <div class="japanese-title" style="margin-bottom: 0.4rem;">エンターテインメント部門 // DIVISION 02</div>
+        <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">
+          DOUGH <span class="text-white">ENTERTAINMENT</span>
+        </h1>
+        <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto; font-size: 0.95rem;">
+          Creative direction, media production, and video concepts under Kelly's guidance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Visualizer Canvas Section -->
+    <section style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-title">
+          <div class="japanese-title" style="margin-bottom: 0.4rem;">音響波形 // SPECTRUM CANVAS</div>
+          <h2>AUDIO WAVEFORM <span class="text-white">CANVAS</span></h2>
+          <p>Real-time monochrome audio visualizer animation.</p>
+        </div>
+
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <canvas id="spectrum-canvas" width="560" height="90" style="background:#000; border-radius:4px; border:1px solid var(--border-color); width:100%;"></canvas>
+            <div style="text-align: center;">
+              <h3 id="current-track-title" class="text-white" style="font-size: 1rem;">NOT ENOUGH DOUGH - THEME</h3>
+              <p id="current-track-artist" style="color: var(--text-muted); font-size: 0.8rem;">Dough Entertainment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Concepts -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div class="japanese-title" style="margin-bottom: 0.4rem;">メディア企画 // MEDIA PROJECTS</div>
+          <h2>MEDIA <span class="text-white">CONCEPTS</span></h2>
+          <p>Shows, podcasts, and video ideas being prepared for official release.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Item 1 -->
+          <div class="card">
+            <div class="tag" style="margin-bottom:0.5rem;">PODCAST</div>
+            <h3>THE DOUGH TALK SHOW</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0.5rem 0 1rem;">
+              A casual talk show hosted by Jordan & Kelly discussing tech, gaming, and business journeys.
+            </p>
+            <div class="tag">EPISODES IN PRODUCTION</div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="card">
+            <div class="tag" style="margin-bottom:0.5rem;">DOCUMENTARY</div>
+            <h3>NOT ENOUGH DOUGH: ORIGINS</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0.5rem 0 1rem;">
+              Behind-the-scenes look at how a school project evolved into an actual business entity.
+            </p>
+            <div class="tag">BEHIND THE SCENES</div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="card">
+            <div class="tag" style="margin-bottom:0.5rem;">ANIMATED SHORT</div>
+            <h3>BAKER SYNDICATE</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0.5rem 0 1rem;">
+              An anime-style short animation featuring our brand characters and aesthetic.
+            </p>
+            <div class="tag">CONCEPT BOARD</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 NOT ENOUGH DOUGH. CO-FOUNDED BY JORDAN & KELLY.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/media.js"></script>
+</body>
+</html>
