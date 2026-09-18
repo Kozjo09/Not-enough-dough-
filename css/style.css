@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Glitch Inside';
+  src: url('../fonts/Glitch inside.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* --- NOT ENOUGH DOUGH - BLACK & WHITE ANIME DARK THEME (NO OVERFLOW & CLEAN LAYOUT) --- */
 :root {
   --bg-primary: #08080a;
@@ -9,6 +16,7 @@
   --border-color: rgba(255, 255, 255, 0.15);
   --border-strong: #ffffff;
   --font-heading: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-glitch: 'Glitch Inside', 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -736,4 +744,12 @@ footer {
   font-style: italic;
   margin: auto 0;
   padding: 1rem 0;
+}
+
+
+/* Dough Games Font */
+.dough-games-title,
+.font-glitch {
+  font-family: var(--font-glitch);
+  letter-spacing: 2px;
 }
